@@ -11,6 +11,9 @@
 		1D5BFF6E2C860D35007397C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF6D2C860D35007397C0 /* ContentView.swift */; };
 		1D5BFF702C860D38007397C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5BFF6F2C860D38007397C0 /* Assets.xcassets */; };
 		1D5BFF732C860D38007397C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D5BFF722C860D38007397C0 /* Preview Assets.xcassets */; };
+		1D5BFF7F2C860E61007397C0 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF7E2C860E61007397C0 /* ExploreView.swift */; };
+		1D5BFF812C860E6D007397C0 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF802C860E6D007397C0 /* SearchView.swift */; };
+		1D5BFF832C860E7A007397C0 /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF822C860E7A007397C0 /* LikedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		1D5BFF6D2C860D35007397C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1D5BFF6F2C860D38007397C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D5BFF722C860D38007397C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D5BFF7E2C860E61007397C0 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		1D5BFF802C860E6D007397C0 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1D5BFF822C860E7A007397C0 /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,12 @@
 		1D5BFF6A2C860D35007397C0 /* CatApp */ = {
 			isa = PBXGroup;
 			children = (
+				1D5BFF7D2C860E2C007397C0 /* Helper */,
+				1D5BFF7C2C860E1C007397C0 /* Network */,
+				1D5BFF7B2C860E0D007397C0 /* ViewModels */,
+				1D5BFF842C860F75007397C0 /* Models */,
+				1D5BFF792C860DF3007397C0 /* Views */,
+				1D5BFF7A2C860E01007397C0 /* Components */,
 				1D5BFF6B2C860D35007397C0 /* CatAppApp.swift */,
 				1D5BFF6D2C860D35007397C0 /* ContentView.swift */,
 				1D5BFF6F2C860D38007397C0 /* Assets.xcassets */,
@@ -65,6 +77,51 @@
 				1D5BFF722C860D38007397C0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D5BFF792C860DF3007397C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D5BFF7E2C860E61007397C0 /* ExploreView.swift */,
+				1D5BFF802C860E6D007397C0 /* SearchView.swift */,
+				1D5BFF822C860E7A007397C0 /* LikedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1D5BFF7A2C860E01007397C0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1D5BFF7B2C860E0D007397C0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		1D5BFF7C2C860E1C007397C0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1D5BFF7D2C860E2C007397C0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		1D5BFF842C860F75007397C0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D5BFF812C860E6D007397C0 /* SearchView.swift in Sources */,
 				1D5BFF6E2C860D35007397C0 /* ContentView.swift in Sources */,
+				1D5BFF7F2C860E61007397C0 /* ExploreView.swift in Sources */,
 				1D5BFF6C2C860D35007397C0 /* CatAppApp.swift in Sources */,
+				1D5BFF832C860E7A007397C0 /* LikedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
