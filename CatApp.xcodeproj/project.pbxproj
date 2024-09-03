@@ -21,6 +21,8 @@
 		1D5BFF902C8625B6007397C0 /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF8F2C8625B6007397C0 /* BreedList.swift */; };
 		1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF912C8625C7007397C0 /* BreedDetail.swift */; };
 		1DC9D93C2C87395600863274 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93B2C87395600863274 /* Fact.swift */; };
+		1DC9D93E2C8752E400863274 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93D2C8752E400863274 /* NetworkService.swift */; };
+		1DC9D9402C87567F00863274 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93F2C87567F00863274 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		1D5BFF8F2C8625B6007397C0 /* BreedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedList.swift; sourceTree = "<group>"; };
 		1D5BFF912C8625C7007397C0 /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
 		1DC9D93B2C87395600863274 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		1DC9D93D2C8752E400863274 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1DC9D93F2C87567F00863274 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		1D5BFF7B2C860E0D007397C0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				1DC9D93F2C87567F00863274 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 		1D5BFF7C2C860E1C007397C0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1DC9D93D2C8752E400863274 /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -226,10 +232,12 @@
 				1D5BFF812C860E6D007397C0 /* SearchView.swift in Sources */,
 				1D5BFF8B2C86118F007397C0 /* Image.swift in Sources */,
 				1D5BFF8E2C86247E007397C0 /* BreedRow.swift in Sources */,
+				1DC9D93E2C8752E400863274 /* NetworkService.swift in Sources */,
 				1D5BFF892C861187007397C0 /* Breed.swift in Sources */,
 				1D5BFF6E2C860D35007397C0 /* ContentView.swift in Sources */,
 				1D5BFF7F2C860E61007397C0 /* ExploreView.swift in Sources */,
 				1D5BFF6C2C860D35007397C0 /* CatAppApp.swift in Sources */,
+				1DC9D9402C87567F00863274 /* SearchViewModel.swift in Sources */,
 				1DC9D93C2C87395600863274 /* Fact.swift in Sources */,
 				1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */,
 				1D5BFF832C860E7A007397C0 /* LikedView.swift in Sources */,

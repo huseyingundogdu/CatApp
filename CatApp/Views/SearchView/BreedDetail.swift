@@ -13,18 +13,31 @@ struct BreedDetail: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            //TODO: rectangle to image
-            RoundedRectangle(cornerRadius: 12)
-                .frame(height: 300)
-            
+            if let imageID = breed.referenceImageID {
+                let url = URL(string: Constants.URLs.spesificImageURL(imageID))
+                    AsyncImage(url: url) { image in
+                        image
+                            .resizable()
+                            .frame(height: 300)
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                            
+                    } placeholder: {
+                        ProgressView()
+                    }
+            } else {
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(height: 300)
+            }
             Text(breed.temperament)
                 .multilineTextAlignment(.center)
                 .italic()
                 .foregroundStyle(.secondary)
-                
-            Text(breed.description)
-                .font(.title2)
-            
+              
+            ScrollView {
+                Text(breed.description)
+                    .font(.title2)
+            }
             Spacer()
         }
         .padding()

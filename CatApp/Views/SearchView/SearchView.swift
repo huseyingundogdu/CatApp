@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State var breeds: [Breed] = [Breed]()
+    @StateObject var viewModel = SearchViewModel()
     @State var searchText: String = ""
         
     private var filteredBreeds: [Breed] {
         if searchText == "" {
-            return breeds
+            return viewModel.breeds
         } else {
-            return breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            return viewModel.breeds.filter { $0.name.lowercased().contains(searchText.lowercased()) }
         }
     }
     
@@ -31,5 +31,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(breeds: breeds)
+    SearchView()
 }
