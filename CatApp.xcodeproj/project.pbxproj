@@ -20,6 +20,7 @@
 		1D5BFF8E2C86247E007397C0 /* BreedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF8D2C86247E007397C0 /* BreedRow.swift */; };
 		1D5BFF902C8625B6007397C0 /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF8F2C8625B6007397C0 /* BreedList.swift */; };
 		1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF912C8625C7007397C0 /* BreedDetail.swift */; };
+		1DC9D93C2C87395600863274 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93B2C87395600863274 /* Fact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1D5BFF8D2C86247E007397C0 /* BreedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedRow.swift; sourceTree = "<group>"; };
 		1D5BFF8F2C8625B6007397C0 /* BreedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedList.swift; sourceTree = "<group>"; };
 		1D5BFF912C8625C7007397C0 /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
+		1DC9D93B2C87395600863274 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				1D5BFF882C861187007397C0 /* Breed.swift */,
 				1D5BFF8A2C86118F007397C0 /* Image.swift */,
+				1DC9D93B2C87395600863274 /* Fact.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				1D5BFF6E2C860D35007397C0 /* ContentView.swift in Sources */,
 				1D5BFF7F2C860E61007397C0 /* ExploreView.swift in Sources */,
 				1D5BFF6C2C860D35007397C0 /* CatAppApp.swift in Sources */,
+				1DC9D93C2C87395600863274 /* Fact.swift in Sources */,
 				1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */,
 				1D5BFF832C860E7A007397C0 /* LikedView.swift in Sources */,
 				1D5BFF902C8625B6007397C0 /* BreedList.swift in Sources */,
