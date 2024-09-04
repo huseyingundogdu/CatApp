@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct BreedImage: Codable {
+struct CatImage: Codable {
     let id: String
     let url: String
+    let breeds: [Breed]?
     let width: Int
     let height: Int
 }

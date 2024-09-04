@@ -16,5 +16,9 @@ struct Constants {
         static let spesificImageURL = { (imageID: String) in
             return "https://cdn2.thecatapi.com/images/" + imageID + ".jpg"
         }
+        
+        
+        static let randomFactURL = "https://meowfacts.herokuapp.com/"
+        
     }
 }
