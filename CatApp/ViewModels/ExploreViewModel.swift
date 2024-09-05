@@ -13,12 +13,19 @@ class ExploreViewModel: ObservableObject {
     @Published var catImage: [CatImage] = []
     @Published var fact: Fact = fact1
     @Published var isLoading = false
-    
+    @Published var detailedCatImage: CatImage?
+    var hasBreeds: Bool {
+        detailedCatImage?.breeds != nil && !(detailedCatImage?.breeds?.isEmpty ?? true)
+    }
     
     func getCatImage() async throws {
         isLoading = true
         defer { isLoading = false }
         catImage = try await networkService.fetchRandomCatImage()
+        
+        if let id = catImage.first?.id {
+            try await getDetailsOfCat(id: id)
+        }
     }
     
     func getFact() async throws {
@@ -28,6 +35,6 @@ class ExploreViewModel: ObservableObject {
     }
     
     func getDetailsOfCat(id: String) async throws {
-        
+        detailedCatImage = try await networkService.fetchSpesificCatImage(id: id)
     }
 }

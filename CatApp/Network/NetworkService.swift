@@ -58,6 +58,27 @@ class NetworkService: NSProtocol {
         }
     }
     
+    //Updated fetchRandomCatImage()
+    func fetchSpesificCatImage(id: String) async throws -> CatImage {
+        guard let url = URL(string: Constants.URLs.imageURL + id) else {
+            throw NSError.invalidURL
+        }
+        
+        let (data, response) = try await URLSession.shared.data(from: url)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw NSError.invalidResponse
+        }
+        
+        do {
+            let decodedData = try JSONDecoder().decode(CatImage.self, from: data)
+            return decodedData
+        } catch {
+            throw NSError.invalidData
+        }
+    }
+    
+    
     func fetchBreeds() async throws -> [Breed] {
         guard let url = URL(string: Constants.URLs.breedsURL) else {
             throw NSError.invalidURL

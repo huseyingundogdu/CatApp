@@ -21,6 +21,8 @@
 		1D5BFF8E2C86247E007397C0 /* BreedRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF8D2C86247E007397C0 /* BreedRow.swift */; };
 		1D5BFF902C8625B6007397C0 /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF8F2C8625B6007397C0 /* BreedList.swift */; };
 		1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5BFF912C8625C7007397C0 /* BreedDetail.swift */; };
+		1DADF6AD2C89E5A7005AE890 /* ExploreViewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADF6AC2C89E5A7005AE890 /* ExploreViewImage.swift */; };
+		1DADF6AF2C89E71F005AE890 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DADF6AE2C89E71F005AE890 /* MockData.swift */; };
 		1DC9D93C2C87395600863274 /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93B2C87395600863274 /* Fact.swift */; };
 		1DC9D93E2C8752E400863274 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93D2C8752E400863274 /* NetworkService.swift */; };
 		1DC9D9402C87567F00863274 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9D93F2C87567F00863274 /* SearchViewModel.swift */; };
@@ -43,6 +45,8 @@
 		1D5BFF8D2C86247E007397C0 /* BreedRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedRow.swift; sourceTree = "<group>"; };
 		1D5BFF8F2C8625B6007397C0 /* BreedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedList.swift; sourceTree = "<group>"; };
 		1D5BFF912C8625C7007397C0 /* BreedDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetail.swift; sourceTree = "<group>"; };
+		1DADF6AC2C89E5A7005AE890 /* ExploreViewImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewImage.swift; sourceTree = "<group>"; };
+		1DADF6AE2C89E71F005AE890 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		1DC9D93B2C87395600863274 /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
 		1DC9D93D2C8752E400863274 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		1DC9D93F2C87567F00863274 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5BFF7E2C860E61007397C0 /* ExploreView.swift */,
+				1DADF6AC2C89E5A7005AE890 /* ExploreViewImage.swift */,
 				1D2CF1392C88C825006FE7E5 /* ImageInteractionView.swift */,
 			);
 			path = ExploreView;
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5BFF862C86114C007397C0 /* Constants.swift */,
+				1DADF6AE2C89E71F005AE890 /* MockData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 				1D5BFF812C860E6D007397C0 /* SearchView.swift in Sources */,
 				1D5BFF8B2C86118F007397C0 /* CatImage.swift in Sources */,
 				1D5BFF8E2C86247E007397C0 /* BreedRow.swift in Sources */,
+				1DADF6AD2C89E5A7005AE890 /* ExploreViewImage.swift in Sources */,
 				1D2CF13A2C88C825006FE7E5 /* ImageInteractionView.swift in Sources */,
 				1DC9D93E2C8752E400863274 /* NetworkService.swift in Sources */,
 				1D5BFF892C861187007397C0 /* Breed.swift in Sources */,
@@ -255,6 +262,7 @@
 				1D5BFF6C2C860D35007397C0 /* CatAppApp.swift in Sources */,
 				1DC9D9402C87567F00863274 /* SearchViewModel.swift in Sources */,
 				1DC9D93C2C87395600863274 /* Fact.swift in Sources */,
+				1DADF6AF2C89E71F005AE890 /* MockData.swift in Sources */,
 				1D5BFF922C8625C7007397C0 /* BreedDetail.swift in Sources */,
 				1D5BFF832C860E7A007397C0 /* LikedView.swift in Sources */,
 				1D5BFF902C8625B6007397C0 /* BreedList.swift in Sources */,
@@ -317,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -374,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -400,6 +408,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,6 +438,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

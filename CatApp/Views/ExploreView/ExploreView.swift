@@ -17,46 +17,26 @@ struct ExploreView: View {
                 Button {
                     Task {
                         await fetchImageAndFact()
+                        print(viewModel.detailedCatImage ?? "---")
                     }
                 } label: {
                     if viewModel.isLoading {
                         ProgressView()
                             .frame(height: 350)
-                    } else if let catImage = viewModel.catImage.first {
-                        let imageURL = URL(string: catImage.url)
-                        VStack {
-                            AsyncImage(url: imageURL) { image in
-                                image
-                                    .resizable()
-                                    .frame(height: 350)
-                                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(height: 350)
-                            }
-                        }
+                    } else if let catImage = viewModel.detailedCatImage {
+                        //sadece url gonderilebilir
+                        ExploreViewImage(catImage: catImage)
                     } else {
                         RoundedRectangle(cornerRadius: 12)
                             .frame(height: 350)
                     }
                 }
-                
-                HStack {
-                    Spacer()
-                    Button {
-                        //TODO: Like
-                    } label: {
-                        Image(systemName: "heart")
-                            .imageScale(.large)
-                    }
-                    Button {
-                        //TODO: Info
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                            .imageScale(.large)
-                    }
+                /*
+                if let catImage = viewModel.detailedCatImage {
+                    ImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage)
+                    Text(catImage.id)
                 }
-                    
+                */
                 
                 ScrollView {
                     
@@ -68,9 +48,9 @@ struct ExploreView: View {
             }
             .padding()
             .navigationTitle("Explore")
-            .task {
-                await fetchImageAndFact()
-            }
+//            .task {
+//                await fetchImageAndFact()
+//            }
         }
     }
     
