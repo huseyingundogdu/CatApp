@@ -20,81 +20,37 @@ enum NSError: Error {
 }
 
 class NetworkService: NSProtocol {
-    func fetchRandomFact() async throws -> Fact {
-        guard let url = URL(string: Constants.URLs.randomFactURL) else {
-            throw NSError.invalidURL
-        }
+    private func fetch<T: Decodable>(urlString: String) async throws -> T {
+        guard let url = URL(string: urlString) else { throw NSError.invalidURL }
         
         let (data, response) = try await URLSession.shared.data(from: url)
         
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw NSError.invalidResponse
-        }
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { throw NSError.invalidResponse }
         
         do {
-            let decodedData = try JSONDecoder().decode(Fact.self, from: data)
+            let decodedData = try JSONDecoder().decode(T.self, from: data)
             return decodedData
         } catch {
             throw NSError.invalidData
         }
     }
+    
+    //MARK: - Fact
+    func fetchRandomFact() async throws -> Fact {
+        return try await fetch(urlString: Constants.URLs.randomFactURL)
+    }
+    
     
     func fetchRandomCatImage() async throws -> [CatImage] {
-        guard let url = URL(string: Constants.URLs.randomImageURL) else {
-            throw NSError.invalidURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw NSError.invalidResponse
-        }
-        
-        do {
-            let decodedData = try JSONDecoder().decode([CatImage].self, from: data)
-            return decodedData
-        } catch {
-            throw NSError.invalidData
-        }
+        return try await fetch(urlString: Constants.URLs.randomImageURL)
     }
     
-    //Updated fetchRandomCatImage()
     func fetchSpesificCatImage(id: String) async throws -> CatImage {
-        guard let url = URL(string: Constants.URLs.imageURL + id) else {
-            throw NSError.invalidURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw NSError.invalidResponse
-        }
-        
-        do {
-            let decodedData = try JSONDecoder().decode(CatImage.self, from: data)
-            return decodedData
-        } catch {
-            throw NSError.invalidData
-        }
+        return try await fetch(urlString: Constants.URLs.imageURL + id)
     }
     
     
     func fetchBreeds() async throws -> [Breed] {
-        guard let url = URL(string: Constants.URLs.breedsURL) else {
-            throw NSError.invalidURL
-        }
-        
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw NSError.invalidResponse
-        }
-        
-        do {
-            let decodedData = try JSONDecoder().decode([Breed].self, from: data)
-            return decodedData
-        } catch {
-            throw NSError.invalidData
-        }
+        return try await fetch(urlString: Constants.URLs.breedsURL)
     }
 }
