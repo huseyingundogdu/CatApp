@@ -9,24 +9,21 @@ import SwiftUI
 
 struct ExploreViewImage: View {
     
-    @State var catImage: CatImage
+    @State var catImageURL: String
+    
+    var url: URL? {
+        URL(string: catImageURL)
+    }
     
     var body: some View {
         VStack {
-            if let url = URL(string: catImage.url) {
-                
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .frame(height: 350)
-                        .clipShape(RoundedRectangle(cornerRadius: 24))
-                } placeholder: {
-                    ProgressView()
-                        .frame(height: 350)
-                }
-            } else {
-                //Image url is not valid
-                RoundedRectangle(cornerRadius: 12)
+            AsyncImage(url: url) { image in
+                image
+                    .resizable()
+                    .frame(height: 350) 
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+            } placeholder: {
+                ProgressView()
                     .frame(height: 350)
             }
         }
@@ -35,6 +32,6 @@ struct ExploreViewImage: View {
 
 #Preview {
     NavigationStack {
-        ExploreViewImage(catImage: MockData.catImageDataWBreeds)
+        ExploreViewImage(catImageURL: MockData.catImageDataWBreeds.url)
     }
 }

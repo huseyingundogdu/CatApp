@@ -17,7 +17,6 @@ struct ExploreView: View {
                 Button {
                     Task {
                         await fetchImageAndFact()
-                        print(viewModel.detailedCatImage ?? "---")
                     }
                 } label: {
                     if viewModel.isLoading {
@@ -25,18 +24,17 @@ struct ExploreView: View {
                             .frame(height: 350)
                     } else if let catImage = viewModel.detailedCatImage {
                         //sadece url gonderilebilir
-                        ExploreViewImage(catImage: catImage)
+                        ExploreViewImage(catImageURL: catImage.url)
                     } else {
                         RoundedRectangle(cornerRadius: 12)
                             .frame(height: 350)
                     }
                 }
-                /*
+
                 if let catImage = viewModel.detailedCatImage {
                     ImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage)
-                    Text(catImage.id)
+                    Text(viewModel.detailedCatImage?.id ?? "-")
                 }
-                */
                 
                 ScrollView {
                     

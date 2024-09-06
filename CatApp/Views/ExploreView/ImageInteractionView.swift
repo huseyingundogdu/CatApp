@@ -10,7 +10,7 @@ import SwiftUI
 struct ImageInteractionView: View {
     
     var hasBreeds: Bool
-    @State var catImage: CatImage
+    var catImage: CatImage
     
     var body: some View {
         HStack {
@@ -24,7 +24,7 @@ struct ImageInteractionView: View {
             
             NavigationLink {
                 if let breeds = catImage.breeds, !breeds.isEmpty {
-                    BreedDetail(breed: breeds[0])
+                    BreedDetail(imageURL: catImage.url, breed: breeds[0])
                 } else {
                     Text(catImage.url)
                     Text("nLink")
@@ -40,6 +40,7 @@ struct ImageInteractionView: View {
 }
 
 #Preview {
+    
     NavigationStack {
         ImageInteractionView(hasBreeds: true, catImage: MockData.catImageDataWBreeds)
     }
