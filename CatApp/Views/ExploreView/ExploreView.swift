@@ -19,26 +19,16 @@ struct ExploreView: View {
                         await fetchImageAndFact()
                     }
                 } label: {
-                    if viewModel.isLoading {
-                        ProgressView()
-                            .frame(height: 350)
-                    } else if let catImage = viewModel.detailedCatImage {
-                        //sadece url gonderilebilir
-                        ExploreViewImage(catImageURL: catImage.url)
-                    } else {
-                        RoundedRectangle(cornerRadius: 12)
-                            .frame(height: 350)
-                    }
+                    LoadingImageView(isLoading: viewModel.isLoading, imageURL: viewModel.detailedCatImage?.url)
                 }
 
                 if let catImage = viewModel.detailedCatImage {
-                    ImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage)
-                    Text(viewModel.detailedCatImage?.id ?? "-")
+                    CatImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage)
                 }
                 
                 ScrollView {
                     
-                    Text(viewModel.fact.data.first ?? "There is an issue about the Fact")
+                    Text(viewModel.fact?.data.first ?? "Click the cat and start the journey! :)")
                         .multilineTextAlignment(.center)
                         .italic()
                 }
@@ -46,11 +36,9 @@ struct ExploreView: View {
             }
             .padding()
             .navigationTitle("Explore")
-//            .task {
-//                await fetchImageAndFact()
-//            }
         }
     }
+    
     
     private func fetchImageAndFact() async {
         do {

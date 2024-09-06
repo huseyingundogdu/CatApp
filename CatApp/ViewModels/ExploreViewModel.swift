@@ -10,8 +10,9 @@ import Foundation
 class ExploreViewModel: ObservableObject {
     
     private let networkService = NetworkService()
+    
     @Published var catImage: [CatImage] = []
-    @Published var fact: Fact = fact1
+    @Published var fact: Fact?
     @Published var isLoading = false
     @Published var detailedCatImage: CatImage?
     var hasBreeds: Bool {
@@ -36,5 +37,14 @@ class ExploreViewModel: ObservableObject {
     
     func getDetailsOfCat(id: String) async throws {
         detailedCatImage = try await networkService.fetchSpesificCatImage(id: id)
+    }
+    
+    //TODO: Error Handling
+    @Published var errorMessage: String?
+    @Published var showingError: Bool = false
+    
+    private func handleError(_ error: Error) {
+        errorMessage = error.localizedDescription
+        showingError = true
     }
 }

@@ -22,9 +22,9 @@ struct ExploreViewImage: View {
                     .resizable()
                     .frame(height: 350) 
                     .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .shadow(radius: 10)
             } placeholder: {
-                ProgressView()
-                    .frame(height: 350)
+                CustomProgressView()
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ImageInteractionView: View {
+struct CatImageInteractionView: View {
     
     var hasBreeds: Bool
     var catImage: CatImage
@@ -42,6 +42,6 @@ struct ImageInteractionView: View {
 #Preview {
     
     NavigationStack {
-        ImageInteractionView(hasBreeds: true, catImage: MockData.catImageDataWBreeds)
+        CatImageInteractionView(hasBreeds: true, catImage: MockData.catImageDataWBreeds)
     }
 }
