@@ -11,6 +11,6 @@ struct CatImage: Codable {
     let id: String
     let url: String
     let breeds: [Breed]?
-    let width: Int
-    let height: Int
+    //let width: Int
+    //let height: Int
 }

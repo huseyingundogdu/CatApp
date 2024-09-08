@@ -17,13 +17,21 @@ struct ExploreView: View {
                 Button {
                     Task {
                         await fetchImageAndFact()
-                    }
+                    } 
                 } label: {
-                    LoadingImageView(isLoading: viewModel.isLoading, imageURL: viewModel.detailedCatImage?.url)
+                    LoadingImageView(isLoading: viewModel.isLoading, imageURL: viewModel.detailedCatImage?.url, width: .infinity, height: 350)
                 }
-
+                
                 if let catImage = viewModel.detailedCatImage {
-                    CatImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage)
+                    CatImageInteractionView(hasBreeds: viewModel.hasBreeds, catImage: catImage, isLiked: viewModel.isLiked, onLikeButtonTapped: {
+                        if !viewModel.isLiked {
+                            Task {
+                                await viewModel.likeCatImage(catImageID: catImage.id)
+                            }
+                        } else {
+                            print("Delete request trigger point.")
+                        }
+                    })
                 }
                 
                 ScrollView {

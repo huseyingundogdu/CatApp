@@ -40,7 +40,7 @@ class NetworkService: NSProtocol {
         return try await fetch(urlString: Constants.URLs.randomFactURL)
     }
     
-    
+    //MARK: - Cat
     func fetchRandomCatImage() async throws -> [CatImage] {
         return try await fetch(urlString: Constants.URLs.randomImageURL)
     }
@@ -52,5 +52,37 @@ class NetworkService: NSProtocol {
     
     func fetchBreeds() async throws -> [Breed] {
         return try await fetch(urlString: Constants.URLs.breedsURL)
+    }
+    
+    func likeCatImage(catImageID: String, subID: String? = nil) async throws -> Bool {
+        guard let url = URL(string: Constants.URLs.favouritesURL) else { throw NSError.invalidURL }
+        
+        let payload: [String: Any] = [
+            "image_id": catImageID,
+            "sub_id": subID ?? "default_user1"
+        ]
+        
+        let jsonData = try JSONSerialization.data(withJSONObject: payload, options: [])
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("YOUR_API_KEY", forHTTPHeaderField: "x-api-key")
+        request.httpBody = jsonData
+        
+        // Send the POST request
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        // Check for successful response
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NSError.invalidResponse
+        }
+        
+        
+        
+        return true // Successful response
+    }
+    
+    func fetchLikedCats() async throws -> [FavouriteCatImage] {
+        return try await fetch(urlString: Constants.URLs.favouritesURL + "?sub_id=" + Constants.URLs.currentUserID + "&api_key=YOUR_API_KEY" )
     }
 }

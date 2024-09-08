@@ -11,25 +11,22 @@ struct LoadingImageView: View {
     
     var isLoading: Bool
     var imageURL: String?
+    var width: CGFloat
+    var height: CGFloat
     
     var body: some View {
         if isLoading {
             CustomProgressView()
+                .frame(width: width, height: height)
         } else if let url = imageURL {
             ExploreViewImage(catImageURL: url)
+                .frame(width: width, height: height)
         } else {
-            //when App run
-            ZStack {
-                RoundedRectangle(cornerRadius: 24)
-                    .frame(height: 350)
-                    .blur(radius: 10)
-                Text("🐈")
-                    .font(.system(size: 65))
-            }
+            PlaceholderView(width: width, height: height)
         }
     }
 }
 
 #Preview {
-    LoadingImageView(isLoading: false)
+    LoadingImageView(isLoading: false, imageURL: "https://cdn2.thecatapi.com/images/a2f.jpg", width: 300, height: 300)
 }

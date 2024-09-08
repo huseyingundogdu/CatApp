@@ -9,18 +9,13 @@ import SwiftUI
 
 struct ExploreViewImage: View {
     
-    @State var catImageURL: String
-    
-    var url: URL? {
-        URL(string: catImageURL)
-    }
+    let catImageURL: String
     
     var body: some View {
         VStack {
-            AsyncImage(url: url) { image in
+            AsyncImage(url: URL(string: catImageURL)) { image in
                 image
                     .resizable()
-                    .frame(height: 350) 
                     .clipShape(RoundedRectangle(cornerRadius: 24))
                     .shadow(radius: 10)
             } placeholder: {

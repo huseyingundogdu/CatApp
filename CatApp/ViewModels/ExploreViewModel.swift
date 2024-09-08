@@ -14,6 +14,7 @@ class ExploreViewModel: ObservableObject {
     @Published var catImage: [CatImage] = []
     @Published var fact: Fact?
     @Published var isLoading = false
+    @Published var isLiked = false
     @Published var detailedCatImage: CatImage?
     var hasBreeds: Bool {
         detailedCatImage?.breeds != nil && !(detailedCatImage?.breeds?.isEmpty ?? true)
@@ -21,6 +22,9 @@ class ExploreViewModel: ObservableObject {
     
     func getCatImage() async throws {
         isLoading = true
+        //image liked status
+        isLiked = false
+        
         defer { isLoading = false }
         catImage = try await networkService.fetchRandomCatImage()
         
@@ -38,6 +42,16 @@ class ExploreViewModel: ObservableObject {
     func getDetailsOfCat(id: String) async throws {
         detailedCatImage = try await networkService.fetchSpesificCatImage(id: id)
     }
+    
+    //MARK: Like
+    func likeCatImage(catImageID: String) async {
+            do {
+                let response = try await networkService.likeCatImage(catImageID: catImageID)
+                isLiked = true
+            } catch {
+                print("Failed to like image: \(error)")
+            }
+        }
     
     //TODO: Error Handling
     @Published var errorMessage: String?

@@ -11,15 +11,18 @@ struct CatImageInteractionView: View {
     
     var hasBreeds: Bool
     var catImage: CatImage
+    var isLiked: Bool
+    var onLikeButtonTapped: () -> Void
     
     var body: some View {
         HStack {
             Spacer()
             Button {
-                
+                onLikeButtonTapped()
             } label: {
-                Image(systemName: "heart")
+                Image(systemName: isLiked ? "heart.fill" : "heart")
                     .imageScale(.large)
+                    .foregroundColor(isLiked ? .red : .gray)
             }
             
             NavigationLink {
@@ -42,6 +45,6 @@ struct CatImageInteractionView: View {
 #Preview {
     
     NavigationStack {
-        CatImageInteractionView(hasBreeds: true, catImage: MockData.catImageDataWBreeds)
+        CatImageInteractionView(hasBreeds: true, catImage: MockData.catImageDataWBreeds, isLiked: true, onLikeButtonTapped: {print("Button tapped")})
     }
 }

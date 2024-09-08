@@ -20,5 +20,7 @@ struct Constants {
         
         static let randomFactURL = "https://meowfacts.herokuapp.com/"
         
+        static let currentUserID = "default_user1"
+        static let favouritesURL = baseURL + "favourites"
     }
 }

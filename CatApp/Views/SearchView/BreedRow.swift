@@ -13,7 +13,7 @@ struct BreedRow: View {
     
     var body: some View {
         HStack {
-            
+           //FIXME: use loadingimageview
             if let imageID = breed.referenceImageID {
                 AsyncImage(url: URL(string: Constants.URLs.spesificImageURL(imageID))) { image in
                     image
